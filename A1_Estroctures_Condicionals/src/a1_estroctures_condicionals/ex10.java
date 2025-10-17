@@ -11,104 +11,30 @@ import java.util.Scanner;
  * @author nlo7503
  */
 public class ex10 {
-
     public static void main(String[] args) {
-        double horaA, minA, segA, segAf,horaAf,minAf;
-        Scanner entrada = new Scanner(System.in);
-        System.out.print("introdueix el valor de hores actuals ");
-        horaA = entrada.nextDouble();
-        System.out.print("introdueix el valor de minuts actuals ");
-        minA = entrada.nextDouble();
-        System.out.print("introdueix el valor de segons actuals ");
-        segA = entrada.nextDouble();
-        System.out.print("introdueix el valor de segons afegides ");
-        segAf = entrada.nextDouble();
-        horaAf=0;
-        minAf=0;
-        if(segAf<60){
-        segA+=segAf;
-        minA+=minAf;
-        horaA+=horaAf;
-         if(segA>=60){
-                     segA-=60;
-                     minA++;
-                      if(minA>60){
-                            minA-=60;
-                            horaA++;
-                            if(horaA>=24){
-                                horaA-=24;
-                            }else{
-                                System.out.print("Les hora, minuts i segons que seran, transcorreguten un temps especificat son: "+horaAf+minAf);
-                                }
+     double horesTreballades,salariBrut,salariNet;
+        Scanner in = new Scanner(System.in);
+        System.out.println("introdueix numero de hores treballades: ");
+        horesTreballades=in.nextDouble();
+        salariBrut=0;
+        salariNet=0;
+        if(horesTreballades<=130){
+        salariBrut=horesTreballades*15;
         }
-        else{
-        System.out.print("Calculo hores, minuts i segons del tempsAfegit ");
-        minAf=segAf/60;
-        segAf=segAf%60;
-            if(minAf>=60){
-            System.out.print("Calculo hores i minuts del tempsAfegit ");
-            horaAf=minAf/60;
-            minAf=segAf%60; 
-            segA+=segAf;
-            minA+=minAf;
-            horaA+=horaAf;
-                     if(segA>=60){
-                     segA-=60;
-                     minA++;
-                      if(minA>60){
-                            minA-=60;
-                            horaA++;
-                            if(horaA>=24){
-                                horaA-=24;
-                            }else{
-                                System.out.print("Les hora, minuts i segons que seran, transcorreguten un temps especificat son: "+horaAf+minAf);
-                                }
-            }
-            else{
-            segA+=segAf;
-            minA+=minAf;
-            horaA+=horaAf;
-                     if(segA>=60){
-                     segA-=60;
-                     minA++;
-                      if(minA>60){
-                            minA-=60;
-                            horaA++;
-                            if(horaA>=24){
-                                horaA-=24;
-                            }else{
-                                System.out.print("Les hora, minuts i segons que seran, transcorreguten un temps especificat son: "+horaAf+minAf);
-                                }
-                     }
-                     else{
-                            if(minA>60){
-                            minA-=60;
-                            horaA++;
-                            if(horaA>=24){
-                                horaA-=24;
-                            }else{
-                                System.out.print("Les hora, minuts i segons que seran, transcorreguten un temps especificat son: "+horaAf+minAf);
-                                }
-                            }
-                            else{
-                                if(horaA>=24){
-                                horaA-=24;
-                                } else{
-                                System.out.print("Les hora, minuts i segons que seran, transcorreguten un temps especificat son: "+horaAf+minAf);
-                                }
-                                }
-                            }
-                     }    
-            }
+        if(horesTreballades>130){
+        salariBrut=130+(horesTreballades-130)*22.5;   
         }
-    }
-
-                     }
-            }
-                           
-  }
-                      }
-         }
-
-
+        if(salariBrut<=500){
+            System.out.println("El teu salari net ha sigut: "+salariBrut);
+        }
+        if(salariBrut <= 900){
+            salariNet= 500 + (salariBrut-500) * 0.75;
+            System.out.println("El teu salari net ha sigut: "+salariNet);
+        }
+        if(salariBrut>900){
+            salariNet=500+(400*0.75)+(salariBrut-900)*0.55;
+            System.out.println("El teu salari net ha sigut: "+salariNet);
+        }
     
+    }
+}

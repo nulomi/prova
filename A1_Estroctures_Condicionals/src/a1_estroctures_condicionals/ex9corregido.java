@@ -11,104 +11,34 @@ import java.util.Scanner;
  * @author nlo7503
  */
 public class ex9corregido {
-
     public static void main(String[] args) {
-        double horaA, minA, segA, segAf,horaAf,minAf;
+        //Crear variables
+        int hora_act, min_act, seg_act, hora_aña, min_aña, seg_aña;
         Scanner entrada = new Scanner(System.in);
-        System.out.print("introdueix el valor de hores actuals ");
-        horaA = entrada.nextDouble();
-        System.out.print("introdueix el valor de minuts actuals ");
-        minA = entrada.nextDouble();
-        System.out.print("introdueix el valor de segons actuals ");
-        segA = entrada.nextDouble();
-        System.out.print("introdueix el valor de segons afegides ");
-        segAf = entrada.nextDouble();
-        horaAf=0;
-        minAf=0;
-        if(segAf<60){
-        segA+=segAf;
-        minA+=minAf;
-        horaA+=horaAf;
-         if(segA>=60){
-                     segA-=60;
-                     minA++;
-                      if(minA>60){
-                            minA-=60;
-                            horaA++;
-                            if(horaA>=24){
-                                horaA-=24;
-                            }else{
-                                System.out.print("Les hora, minuts i segons que seran, transcorreguten un temps especificat son: "+horaAf+minAf);
-                                }
-        }
-        else{
-        System.out.print("Calculo hores, minuts i segons del tempsAfegit ");
-        minAf=segAf/60;
-        segAf=segAf%60;
-            if(minAf>=60){
-            System.out.print("Calculo hores i minuts del tempsAfegit ");
-            horaAf=minAf/60;
-            minAf=segAf%60; 
-            segA+=segAf;
-            minA+=minAf;
-            horaA+=horaAf;
-                     if(segA>=60){
-                     segA-=60;
-                     minA++;
-                      if(minA>60){
-                            minA-=60;
-                            horaA++;
-                            if(horaA>=24){
-                                horaA-=24;
-                            }else{
-                                System.out.print("Les hora, minuts i segons que seran, transcorreguten un temps especificat son: "+horaAf+minAf);
-                                }
+        //Inicio del programa
+        System.out.print("Dime la hora actual: ");
+        hora_act = entrada.nextInt();
+        System.out.print("Dime los minutos actuales: ");
+        min_act = entrada.nextInt();
+        System.out.print("Dime los segundos actuales: ");
+        seg_act = entrada.nextInt();
+        System.out.print("Dime el tiempo que quieres añadir en segundos: ");
+        seg_aña = entrada.nextInt();
+        //Condicion y fin
+        if (seg_aña<60) {
+            
+        } else {
+            min_aña = seg_aña/60;
+            seg_aña = seg_aña&60;
+            if (min_aña>=60) {
+                hora_aña = min_aña/60;
+                min_aña = min_aña%60;
             }
             else{
-            segA+=segAf;
-            minA+=minAf;
-            horaA+=horaAf;
-                     if(segA>=60){
-                     segA-=60;
-                     minA++;
-                      if(minA>60){
-                            minA-=60;
-                            horaA++;
-                            if(horaA>=24){
-                                horaA-=24;
-                            }else{
-                                System.out.print("Les hora, minuts i segons que seran, transcorreguten un temps especificat son: "+horaAf+minAf);
-                                }
-                     }
-                     else{
-                            if(minA>60){
-                            minA-=60;
-                            horaA++;
-                            if(horaA>=24){
-                                horaA-=24;
-                            }else{
-                                System.out.print("Les hora, minuts i segons que seran, transcorreguten un temps especificat son: "+horaAf+minAf);
-                                }
-                            }
-                            else{
-                                if(horaA>=24){
-                                horaA-=24;
-                                } else{
-                                System.out.print("Les hora, minuts i segons que seran, transcorreguten un temps especificat son: "+horaAf+minAf);
-                                }
-                                }
-                            }
-                     }    
+                
             }
         }
     }
-
-                     }
-            }
-                           
-  }
-                      }
-         }
-
+}
 
     
